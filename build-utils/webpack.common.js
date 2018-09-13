@@ -12,7 +12,7 @@ const assetsRoot = `${srcRoot}/entries`;
 const distRoot = `${root}/dist`;
 const entryArray = glob.sync(`${assetsRoot}/**/index.js`);
 const modules = {};
-const entriesObj = entryArray.forEach(function(key) {
+entryArray.forEach(function(key) {
     const path = key.replace('/index.js', '');
     const pathArray = path.split('/');
     const name = pathArray.pop();
@@ -21,7 +21,7 @@ const entriesObj = entryArray.forEach(function(key) {
 });
 
 module.exports = {
-    entry: entriesObj,
+    entry: modules,
     output: {
         path: `${distRoot}/assets`,
         publicPath: '/dist/assets',
