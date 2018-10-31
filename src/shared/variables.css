@@ -1,0 +1,7 @@
+:root {
+}
+
+@custom-media --max-md-viewport (max-width: 766px);
+@custom-media --md-viewport (min-width: 767px);
+@custom-media --max-lg-viewport (max-width: 980px);
+@custom-media --lg-viewport (min-width: 981px);

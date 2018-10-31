@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="block-news">
+        <div class="content-wrapper">
+        {% for post in posts %}
+            <div class="news-article">
+            {% include ['partial/tease-'~post.post_type~'.twig', 'partial/tease.twig'] %}
+            </div>
+        {% endfor %}
+
+        {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+        </div>
+    </div>
+{% endblock %}
